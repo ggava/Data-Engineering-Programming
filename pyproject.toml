@@ -7,7 +7,10 @@ name = "data_engineering_pyspark"
 version = "1.0.0"
 description = "Trabalho Final - Relatório de Pedidos 2025"
 authors = [
-    {name = "Seu Nome", email = "seuemail@exemplo.com"}
+    {name = "Gabriel de Almeida Gava", rm = "369149"},
+    {name = "Geovanna Dos Santos Medeiros", rm = "366820"},
+    {name = "Guilherme José Pereira Ratini", rm = "368877"},
+    {name = "Riuler Machado Mendes", rm = "367133"}
 ]
 dependencies = [
     "pyspark>=3.5.0",
@@ -15,5 +18,5 @@ dependencies = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["src/tests"]
 pythonpath = ["src"]
