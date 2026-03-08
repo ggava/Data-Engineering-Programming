@@ -4,4 +4,4 @@ class DataWriter:
 
         df.write \
             .mode("overwrite") \
-            .csv(path)
+            .parquet(path)
