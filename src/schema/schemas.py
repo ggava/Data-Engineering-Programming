@@ -11,12 +11,12 @@ pedidos_schema = StructType([
 ])
 
 pagamentos_schema = StructType([
-    StructField("ID_PEDIDO", StringType(), True),
-    StructField("FORMA_PAGAMENTO", StringType(), True),
-    StructField("VALOR_PAGAMENTO", DoubleType(), True),
-    StructField("STATUS", BooleanType(), True),
-    StructField("DATA_PROCESSAMENTO", TimestampType(), True),
-    StructField("AVALIACAO_FRAUDE", StructType([
+    StructField("id_pedido", StringType(), True),
+    StructField("forma_pagamento", StringType(), True),
+    StructField("valor_pagamento", DoubleType(), True),
+    StructField("status", BooleanType(), True),
+    StructField("data_processamento", TimestampType(), True),
+    StructField("avaliacao_fraude", StructType([
         StructField("fraude", BooleanType(), True)
     ]))
 ])

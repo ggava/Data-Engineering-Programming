@@ -43,8 +43,8 @@ class OrderProcessor:
             )
 
             # Debug para verificar IDs
-            df_pedidos.select("id_pedido").show(5, False)
-            df_pagamentos.select("id_pedido").show(5, False)
+            df_pedidos.select("*").show(5, False)
+            df_pagamentos.select("*").show(5, False)
 
             self.logger.info("Iniciando join entre pedidos e pagamentos...")
 

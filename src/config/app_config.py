@@ -2,15 +2,12 @@ import os
 
 class AppConfig:
     def __init__(self):
-        # Usamos o caminho absoluto direto do seu ambiente Cloud9 para evitar erros de lógica
-        base_dir = "/home/ubuntu/environment/projeto_pyspark"
+        # Deteta a pasta 'projeto_pyspark' baseada na localização deste ficheiro
+        # caminho: projeto_pyspark/src/config/app_config.py
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        self.base_dir = os.path.abspath(os.path.join(current_dir, "..", ".."))
         
-        print(f"DEBUG - Caminho Base: {base_dir}")
-
-        # Agora montamos os caminhos a partir da raiz correta
-        self.pedidos_path = os.path.join(base_dir, "data", "input", "pedidos", "*.csv.gz")
-        self.pagamentos_path = os.path.join(base_dir, "data", "input", "pagamentos", "*.json.gz")
-        self.output_path = os.path.join(base_dir, "data", "output", "relatorio_recusados_2025")
-        
-        print(f"DEBUG - Procurando Pedidos em: {self.pedidos_path}")
-        print(f"DEBUG - Procurando Pagamentos em: {self.pagamentos_path}")
+        # Monta os caminhos sem repetir 'projeto_pyspark'
+        self.pedidos_path = os.path.join(self.base_dir, "data", "input", "pedidos")
+        self.pagamentos_path = os.path.join(self.base_dir, "data", "input", "pagamentos")
+        self.output_path = os.path.join(self.base_dir, "data", "output", "relatorio_recusados_2025")
