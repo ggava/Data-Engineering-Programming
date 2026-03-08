@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "data_engineering_pyspark"
+version = "1.0.0"
+description = "Trabalho Final - Relatório de Pedidos 2025"
+authors = [
+    {name = "Seu Nome", email = "seuemail@exemplo.com"}
+]
+dependencies = [
+    "pyspark>=3.5.0",
+    "pyyaml>=6.0.1"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

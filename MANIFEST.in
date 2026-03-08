@@ -1,0 +1,4 @@
+include requirements.txt
+include pyproject.toml
+recursive-include src/schema *.json
+recursive-include data *.csv *.json
