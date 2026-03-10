@@ -1,4 +1,9 @@
+# Inclui arquivos de texto e configuração na raiz
 include requirements.txt
 include pyproject.toml
-recursive-include src/schema *.json
-recursive-include data *.csv *.json
+include README.md
+include LICENSE
+
+# Inclui os datasets de exemplo que estão na pasta data
+recursive-include data/input *.csv
+recursive-include data/input *.json
