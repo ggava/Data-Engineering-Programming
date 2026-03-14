@@ -13,8 +13,6 @@ class OrderProcessor:
             print("Pagamentos:", df_pagamentos.count())
             print("Pedidos:", df_pedidos.count())
 
-            df_pagamentos.printSchema()
-
             # -------------------------
             # Normalização pagamentos
             # -------------------------
@@ -42,9 +40,7 @@ class OrderProcessor:
                 .withColumnRenamed("ID_CLIENTE", "id_cliente")
             )
 
-            # Debug para verificar IDs
-            df_pedidos.select("*").show(5, False)
-            df_pagamentos.select("*").show(5, False)
+            
 
             self.logger.info("Iniciando join entre pedidos e pagamentos...")
 
@@ -82,8 +78,12 @@ class OrderProcessor:
                     "data_pedido"
                 )
             )
-
+            
+            df_final.show(20, truncate=False)
+            
             return df_final
+            
+            
 
         except Exception as e:
             self.logger.error(f"Erro ao processar dados: {e}")
